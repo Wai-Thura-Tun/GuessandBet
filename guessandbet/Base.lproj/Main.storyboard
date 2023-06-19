@@ -1,24 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="guessandbet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess Number : 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdT-zh-5NH">
+                                <rect key="frame" x="30" y="402" width="210" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score : 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jua-mf-Gw4">
+                                <rect key="frame" x="16" y="104" width="361" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42I-vo-n7x">
+                                <rect key="frame" x="16" y="209" width="361" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bet : 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b89-br-Vce">
+                                <rect key="frame" x="30" y="486" width="103" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obz-x4-exR">
+                                <rect key="frame" x="271.66666666666669" y="480" width="35.666666666666686" height="37"/>
+                                <color key="backgroundColor" red="0.29997761950660867" green="0.35700255639932454" blue="0.79986000059999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="-" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="19"/>
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="decreaseBet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p9n-Gb-mHH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt3-dF-cbt">
+                                <rect key="frame" x="271.66666666666669" y="395" width="35.666666666666686" height="37"/>
+                                <color key="backgroundColor" red="0.29997761950000001" green="0.3570025564" blue="0.79986000059999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="-" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="19"/>
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="decreaseGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eeg-cj-3qQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZe-jt-I7j">
+                                <rect key="frame" x="145" y="617" width="102" height="50"/>
+                                <color key="backgroundColor" red="0.29997761950000001" green="0.3570025564" blue="0.79986000059999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4zT-tI-cac"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Run" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="19"/>
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="run:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iC4-oQ-9g1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kin-Xy-zPB">
+                                <rect key="frame" x="327.33333333333331" y="395" width="35.666666666666686" height="37"/>
+                                <color key="backgroundColor" red="0.29997761950000001" green="0.3570025564" blue="0.79986000059999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="19"/>
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="increaseGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KUh-Nk-XfO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWu-cN-FWd">
+                                <rect key="frame" x="327" y="480" width="35.666666666666686" height="37"/>
+                                <color key="backgroundColor" red="0.29997761950000001" green="0.3570025564" blue="0.79986000059999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="19"/>
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="increaseBet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r8C-au-49d"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kin-Xy-zPB" firstAttribute="top" secondItem="42I-vo-n7x" secondAttribute="bottom" constant="132" id="0vP-mx-IEp"/>
+                            <constraint firstItem="obz-x4-exR" firstAttribute="top" secondItem="Pt3-dF-cbt" secondAttribute="bottom" constant="48" id="6tc-Pn-t1G"/>
+                            <constraint firstItem="b89-br-Vce" firstAttribute="top" secondItem="ZdT-zh-5NH" secondAttribute="bottom" constant="60" id="7jF-5n-Kis"/>
+                            <constraint firstItem="b89-br-Vce" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="7uJ-cY-UQa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jua-mf-Gw4" secondAttribute="trailing" constant="16" id="7yQ-cW-vq8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KZe-jt-I7j" secondAttribute="bottom" constant="151" id="9fJ-Xf-JtD"/>
+                            <constraint firstItem="Pt3-dF-cbt" firstAttribute="top" secondItem="42I-vo-n7x" secondAttribute="bottom" constant="132" id="9mg-16-ySn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LWu-cN-FWd" secondAttribute="trailing" constant="30" id="LWw-5d-MCf"/>
+                            <constraint firstItem="KZe-jt-I7j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="LpF-eg-aCm"/>
+                            <constraint firstItem="42I-vo-n7x" firstAttribute="top" secondItem="jua-mf-Gw4" secondAttribute="bottom" constant="76" id="M51-8I-VyG"/>
+                            <constraint firstItem="jua-mf-Gw4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="PLx-f8-odS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZdT-zh-5NH" secondAttribute="trailing" constant="153" id="Q4w-Po-8dw"/>
+                            <constraint firstItem="42I-vo-n7x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="RCD-X2-31D"/>
+                            <constraint firstItem="ZdT-zh-5NH" firstAttribute="top" secondItem="42I-vo-n7x" secondAttribute="bottom" constant="139" id="SPt-I7-hdf"/>
+                            <constraint firstItem="ZdT-zh-5NH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="YQM-hM-OIM"/>
+                            <constraint firstItem="jua-mf-Gw4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Yl7-Za-Fgp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="42I-vo-n7x" secondAttribute="trailing" constant="16" id="aM5-D3-Rh0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KZe-jt-I7j" secondAttribute="trailing" constant="146" id="aTj-Gr-k1y"/>
+                            <constraint firstItem="Pt3-dF-cbt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZdT-zh-5NH" secondAttribute="trailing" constant="8" symbolic="YES" id="acU-St-8V1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b89-br-Vce" secondAttribute="trailing" constant="260" id="b3v-fc-fwE"/>
+                            <constraint firstItem="kin-Xy-zPB" firstAttribute="leading" secondItem="Pt3-dF-cbt" secondAttribute="trailing" constant="20" id="dLR-7J-Wyq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kin-Xy-zPB" secondAttribute="trailing" constant="30" id="f0W-40-NLd"/>
+                            <constraint firstItem="LWu-cN-FWd" firstAttribute="leading" secondItem="obz-x4-exR" secondAttribute="trailing" constant="20" id="f2P-Ok-uFB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LWu-cN-FWd" secondAttribute="bottom" constant="301" id="ppw-2h-NkI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kin-Xy-zPB" secondAttribute="bottom" constant="386" id="waO-T2-y7v"/>
+                            <constraint firstItem="obz-x4-exR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b89-br-Vce" secondAttribute="trailing" constant="8" symbolic="YES" id="zzc-as-ej4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="betLabel" destination="b89-br-Vce" id="dfa-zQ-YdD"/>
+                        <outlet property="guessLabel" destination="ZdT-zh-5NH" id="w1n-jD-sUA"/>
+                        <outlet property="randomLabel" destination="42I-vo-n7x" id="8gA-1B-wVd"/>
+                        <outlet property="scoreLabel" destination="jua-mf-Gw4" id="gyH-aI-KRa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-25.190839694656489" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
