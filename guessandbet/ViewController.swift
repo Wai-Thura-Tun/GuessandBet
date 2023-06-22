@@ -14,16 +14,42 @@ class ViewController: UIViewController {
     @IBOutlet weak var guessLabel: UILabel!
     @IBOutlet weak var betLabel: UILabel!
     
-    var guessNumber = 1;
-    var betCount = 150;
+    var guessNumber:Int = 1;
+    var betCount:Int = 150;
+    var randonNumber:Int = 1;
+    var scoreNumber:Int = 0;
+    
+    let scoreText:String = "Your score : ";
+    var alertTitle:String = "";
+    var alertText:String = "";
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        updateLabel();
     }
     
     @IBAction func run(_ sender: UIButton) {
+        randonNumber = Int.random(in: 1...10);
+        if randonNumber == guessNumber {
+            scoreNumber += betCount;
+            alertTitle = "Congratulation";
+            alertText = "You win";
+        }
+        else {
+            scoreNumber -= betCount;
+            alertTitle = "Sorry";
+            alertText = "You lose";
+        }
         
+        if(scoreNumber < -2500) {
+            scoreNumber = 0;
+        }
+        else {
+            let alert = UIAlertController(title: alertTitle, message: alertText, preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "OK", style: .default));
+            self.present(alert, animated: true);
+        }
+        updateLabel();
     }
     
     @IBAction func increaseBet(_ sender: UIButton) {
@@ -53,11 +79,18 @@ class ViewController: UIViewController {
     }
     
     func updateGuess() {
-        guessLabel.text = "Guess Number : \(guessNumber)";
+        guessLabel.text = "\(guessNumber)";
     }
     
     func updateBet() {
-        betLabel.text = "Bet : \(betCount)";
+        betLabel.text = "\(betCount)";
+    }
+    
+    func updateLabel() {
+        scoreLabel.text = "\(scoreText) \(scoreNumber)";
+        guessLabel.text = "\(guessNumber)";
+        betLabel.text = "\(betCount)";
+        randomLabel.text = "\(randonNumber)";
     }
     
 }
